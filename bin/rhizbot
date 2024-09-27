@@ -2,9 +2,14 @@
 
 require "bundler/setup"
 require "wizard/of/rhiz/bot"
+require "wizard/of/rhiz/api"
+require "rack"
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+# Run the API server in a separate thread
+Thread.new do
+  Rack::Handler::WEBrick.run(Wizard::Of::Rhiz::API, Port: 9292)
+end
 
+# Run the Discord bot
 bot = Wizard::Of::Rhiz::Bot.new
 bot.run

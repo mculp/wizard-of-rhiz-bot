@@ -16,3 +16,8 @@ gem "activerecord", "~> 6.1"
 gem "httparty", "~> 0.18"
 gem "dotenv", "~> 2.7"
 gem "eth", "~> 0.5"
+
+# Add these lines to the existing Gemfile
+gem 'grape'
+gem 'grape-entity'
+gem 'rack'
